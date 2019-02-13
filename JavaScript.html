@@ -1,0 +1,64 @@
+<!doctype HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>compling</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+
+<body >
+<div class="container"> 
+	<frameset>
+
+	<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4"  >
+	   	<input type="checkbox"  onchange="show2()" id="show2">JavaScript &nbsp;&nbsp;
+			<div id="j" style="display: none;">
+				<textarea style="width: 100%;" rows="20" placeholder="Write here..." id="js"></textarea>
+					<input type="submit" class="btn btn-success" onclick="sendjs()">
+           </div>
+    </div>
+	</div>
+	
+	<div id="output" >	
+	</div>
+
+</frameset>
+</div>
+
+<script type="text/javascript">
+	
+	
+	function show2() {
+		var i = document.getElementById('show2').checked;
+		if(!i){
+			document.getElementById('j').style.display="none";
+		}
+		else{
+			document.getElementById('j').style.display="block";
+		}
+	}
+	
+
+function sendjs() {
+		var c = document.getElementById('output');
+		var code = document.getElementById('js').value; //code 
+		// var c = document.getElementById('h'); //
+		
+		var sc = document.createElement('script');
+		var js = document.createTextNode(code.toString());
+
+		sc.appendChild(js);
+         c.appendChild(sc);
+		console.log("javascript code ");
+	}
+
+</script>
+
+</div>
+	
+</div>
+</body>
+</html>

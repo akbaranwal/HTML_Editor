@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>compling</title>
+	
+	<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/styles/default.min.css">
+
+
+
+	<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+	 <style>
+	p.one {
+  		border-style: solid;
+  		border-width: 5px;
+  		display: none;
+  		padding: 10px;
+	}
+</style>
+	 
+</head>
+<body>
+
+<div class="container"> 
+	<frameset>
+
+	<div class="row">
+		<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" >
+		 <input type="checkbox" onchange="show1()" id="show1">html &nbsp;&nbsp;
+			<div id="htm" style="display: none;">
+		    <textarea style="width: 100%;"  rows="20" column="60" placeholder="Write here..." id="html"></textarea>
+					<input type="submit"  class="btn btn-success" onclick="sendhtml()">	
+			</div>
+	    </div>
+	</div>
+	
+	<p class="one" id="output">
+	 </p>
+</frameset>
+</div>
+
+<script type="text/javascript">
+	
+	function show1() {
+		var i = document.getElementById('show1').checked;
+		if(!i){
+			document.getElementById('htm').style.display="none";
+		}		
+		else { 
+			document.getElementById('htm').style.display="block";
+		}
+	}
+
+	function sendhtml() {
+		document.getElementById("output").style.display="block";
+		var code = document.getElementById('output');
+		var c = document.getElementById('html');
+		//console.log('code = '+c.value)
+		code.visibility="visible";
+		code.innerHTML = c.value;
+		console.log("html output");
+	}
+</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</div>
+</div>
+
+</body>
+</html>

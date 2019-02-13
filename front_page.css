@@ -1,0 +1,87 @@
+html,
+body{
+	background-image: url('code.jpg');
+	height: 80vh;
+	background-size: 100%;
+}
+
+body{font-size: 20px;
+	overflow-x: hidden;
+	color: white;
+	font-family: 'Flamenco',cursive;
+}
+.heading{
+	position: absolute;
+	font-size: 35px;
+	left: 52%;
+	top: 10%;
+	transform: translate(-50%, -30%);
+}
+
+.colorchange{
+	animation: colorchange 1s infinite;
+}
+@keyframes colorchange{
+	0%{color: red;}
+	25%{color: #bf55ec;}
+	50%{color: white;}
+	100%{color: red;}
+}	
+
+.main-content-header{
+	width: 1180px;
+	position: absolute;
+	left: 80%;
+	top: 25%;
+	transform: translate(-50%, -30%);
+}
+
+
+.btn{
+	display: inline-block;
+	padding: 10px 30px;
+	font-weight: lighter;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 200px;
+	transition: background-color 0.2s, border 0.2s, color 0.2;
+}
+
+
+.btn-full{
+	background-color: transparent;
+	color: #bf55ec;
+	margin-right: 15px;
+	border: 1px solid #bf55ec;
+}
+
+.btn-full:hover{
+	background-color: #fff;
+
+}
+
+.btn-half{
+	background-color: transparent;
+	color: #ff;
+	margin-right: 15px;
+	border: 1px solid #fff;
+}
+.btn-half:hover{
+	background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

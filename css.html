@@ -1,0 +1,92 @@
+<!doctype HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>compling</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	 
+</head>
+<body>
+
+<div class="container"> 
+	<frameset>
+
+	<div class="row">
+		
+
+	<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" >
+		<input type="checkbox"  onchange="show3()" id="show3">css &nbsp;&nbsp;
+		<div id="cs" style="display: none;">
+				<textarea style="width: 100%;" rows="20" placeholder="Write here..." id="css"></textarea>
+				<input type="submit" class="btn btn-success" onclick="sendcss()">
+				<input type="submit" class="btn btn-primary" onclick="savecss()" value="save">
+        </div>
+	</div>
+	</div>
+	<p id="message" >Your code is saved !</p>
+	<div id="output" >	
+		
+	</div>
+</frameset>
+</div>
+
+<script type="text/javascript">
+	 
+	
+	function show3() {
+		var i = document.getElementById('show3').checked;
+		if(!i){
+			document.getElementById('cs').style.display="none";
+		}
+		else{
+			document.getElementById('cs').style.display="block";
+		}
+	}
+
+	function savecss() {
+		event.preventDefault();
+		var data = 'data='+encodeURIComponent(document.getElementById('css').value);
+        var xhr = new XMLHttpRequest();
+        var message =document.getElementById('message');
+        xhr.open('POST','save.php',true);
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset-UTF-8');
+        xhr.onload = function(){
+        	console.log(this.responseText);
+            message.style.visibility="visible";
+            // setTimeout(() =>{
+            // 	message.style.visibility="hidden";
+            // },2000);
+        }
+      xhr.send(data);
+	}
+	function sendcss() {
+	//	var c = document.getElementById('output');
+	//	var code = document.getElementById('cs').value; //code 
+		// var c = document.getElementById('h'); //
+		
+	//	var sc = document.createElement('style');
+	//	var js = document.createTextNode(code); 
+
+	//	sc.appendChild(js);
+	//	c.appendChild(sc);
+	//	console.log("code");
+
+
+		var code = document.getElementById('output');
+		var c = document.getElementById('css');
+		//console.log('code = '+c.value)
+		code.visibility="visible";
+		code.innerHTML = c.value;
+		console.log("css output");
+
+	}
+</script>
+
+</div>
+	
+</div>
+</body>
+</html>
